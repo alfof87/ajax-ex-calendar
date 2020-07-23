@@ -27,32 +27,25 @@ function ajaxTest(){
   success: function(data){
     var success = data["success"];
     var value = data["response"];
-    console.log(data);
+    // console.log(data);
+
+    var gennaio = $("#gennaio");
+    calendario.append(value);
+    console.log(value);
+    //giorni
+    for (var i = 1; i < 31; i++) {
+      var giorno = $(".giorno");
+      // var d = document.createElement("BUTTON");
+      var newOpt = $('<p value="' + i + '">' + i + '</p>');
+      giorno.append(newOpt);
+    }
   },
   error: function(error){
     console.log("error", error);
   }
 
 });
-// var dayTarget = $(".day");
-// var monthTarget = $(".month");
-// var yearTarget = $(".year");
-//
-// var months = moment.months();
-//
-// for (var i = 1; i < 31; i++) {
-//   var newOpt = $('<option value="' + i + '">' + i + '</option>');
-//   dayTarget.append(newOpt);
-// }
-// for (var i = 0; i < months.length; i++) {
-//   var month = months[i];
-//   var newOpt = $('<option value="' + (i+1) + '">' + month + '</option>');
-//   monthTarget.append(newOpt);
-// }
-// for (var i = 1980; i <= 2017; i++) {
-//   var newOpt = $('<option value="' + i + '">' + i + '</option>');
-//   yearTarget.append(newOpt);
-// }
+
 
 }
 
