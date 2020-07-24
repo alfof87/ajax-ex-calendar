@@ -17,3 +17,14 @@ h1{
 .holidays{
   color: red;
 }
+button{
+  width: 50px;
+  height: 25px;
+  margin: 30px;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}

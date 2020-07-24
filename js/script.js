@@ -37,6 +37,7 @@ for (var i = 0; i <= daysInMonth; i++) {
 function printHoliday(currentMonth) {
   var year = currentMonth.year();
   var month = currentMonth.month();
+  console.log(month);
   $.ajax({
     url:"https://flynn.boolean.careers/exercises/api/holidays?month=0&year=2018",
     method: "GET",
@@ -56,6 +57,20 @@ function printHoliday(currentMonth) {
       console.log("error", error);
     }
   });
+  // Diamo la possibilità di cambiare mese, gestendo il caso in cui l'API non possa
+  // ritornare festività.
+  function changeMonth(){
+
+
+
+    $("#prev").click(function () {
+
+});
+
+    $("#next").click(function () {
+      moment("2018-01-01").add(1, 'month');
+});
+  }
 }
 
 
@@ -68,5 +83,6 @@ function init(){
 var currentMonth = moment("2018-01-01")
 printMonth(currentMonth);
 printHoliday(currentMonth);
+// changeMonth();
 }
 $(document).ready(init);
