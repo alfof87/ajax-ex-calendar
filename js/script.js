@@ -68,7 +68,9 @@ function printHoliday(currentMonth) {
 });
 
     $("#next").click(function () {
-      moment("2018-01-01").add(1, 'month');
+      $("gen").addClass(".hide");
+      $("feb").addClass(".show");
+      // moment("2018-01-01").add(1, 'month');
 });
   }
 }
@@ -83,6 +85,6 @@ function init(){
 var currentMonth = moment("2018-01-01")
 printMonth(currentMonth);
 printHoliday(currentMonth);
-// changeMonth();
+changeMonth();
 }
 $(document).ready(init);
