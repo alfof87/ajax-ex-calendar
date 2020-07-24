@@ -27,7 +27,7 @@ var compiled = Handlebars.compile(template);
 var target = $(".giorni-mese");
 target.html("");
 console.log(daysInMonth);
-for (var i = 0; i <= daysInMonth; i++) {
+for (var i = 1; i <= daysInMonth; i++) {
   var dayshtml = compiled({
     "value": i
   });
@@ -59,21 +59,26 @@ function printHoliday(currentMonth) {
   });
   // Diamo la possibilità di cambiare mese, gestendo il caso in cui l'API non possa
   // ritornare festività.
-  function changeMonth(){
+  // var t = moment().format('MMMM Do YYYY, h:mm:ss a');
+  // console.log(t);
+  // var f = $("#feb")
+  // console.log(f);
+  function nextMonth(){
+    $("#next").click(function () {
+      $("#template li").addClass(".hide");
 
+      // moment("2018-01-01").add(1, 'month');
+});
+  }
 
 
     $("#prev").click(function () {
 
 });
 
-    $("#next").click(function () {
-      $("gen").addClass(".hide");
-      $("feb").addClass(".show");
-      // moment("2018-01-01").add(1, 'month');
-});
+
   }
-}
+
 
 
 
@@ -85,6 +90,6 @@ function init(){
 var currentMonth = moment("2018-01-01")
 printMonth(currentMonth);
 printHoliday(currentMonth);
-changeMonth();
+nextMonth();
 }
 $(document).ready(init);
